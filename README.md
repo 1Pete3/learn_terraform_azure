@@ -1,1 +1,1 @@
-# learn_terraform_auzre
+# learn_terraform_azure
