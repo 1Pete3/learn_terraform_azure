@@ -8,18 +8,26 @@ terraform {
   }
 
   required_version = ">= 1.1.0"
+  cloud {
+    organization = "1pete3_azure_test"
+    workspaces {
+      name = "learn-terraform-azure"
+    }
+  }
 }
+
+
 
 provider "azurerm" {
   features {}
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "myTFResourceGroup"
+  name     = var.resource_group_name
   location = "westus2"
   tags = {
     Environment = "Terraform Getting Started"
-    Team = "DevOps"
+    Team        = "DevOps"
   }
 }
 
